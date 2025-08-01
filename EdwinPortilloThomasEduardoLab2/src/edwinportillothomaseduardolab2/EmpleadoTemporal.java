@@ -8,17 +8,15 @@ public class EmpleadoTemporal extends EmpleadoEstandar {
         super(codigo, nombre, salarioBase);
     }
     
-   @Override
-public double calcularPago() {
-    Calendar hoy = Calendar.getInstance();
-
-    if (fechaVencimiento != null && 
-        (hoy.before(fechaVencimiento) || hoy.equals(fechaVencimiento))) {
-        return super.calcularPago();
+    @Override
+    public double calcularPago() {
+        Calendar hoy = Calendar.getInstance();
+        
+        if(hoy.before(fechaVencimiento) || hoy.equals(fechaVencimiento)) {
+            super.calcularPago();
+        }
+        return 0.0;
     }
-    return 0.0;
-}
-
     
     public void setFechaVencimiento(Calendar nuevaFecha) {
         fechaVencimiento = nuevaFecha;
