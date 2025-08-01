@@ -84,7 +84,8 @@ public class MenuPrincipal extends JFrame {
         });
 
         btnActualizarContrato.addActionListener(e -> {
-            JOptionPane.showMessageDialog(this, "Actualizar Contrato aún no implementado.");
+            FrmActualizarContrato frm = new FrmActualizarContrato(empresa);
+            frm.setVisible(true);
         });
 
         btnCalcularPago.addActionListener(e -> {
