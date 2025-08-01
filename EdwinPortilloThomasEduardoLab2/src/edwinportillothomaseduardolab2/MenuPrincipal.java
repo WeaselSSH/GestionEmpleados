@@ -6,7 +6,7 @@ import java.awt.*;
 public class MenuPrincipal extends JFrame {
 
     public MenuPrincipal() {
-        setTitle("Menú Principal - Gestión de Empleados");
+        setTitle("Menú Principal");
         setSize(500, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -18,7 +18,6 @@ public class MenuPrincipal extends JFrame {
     private void initComponents() {
         JPanel panelPrincipal = new JPanel(new BorderLayout());
 
-        // Norte: Título
         JPanel panelNorte = new JPanel(new FlowLayout(FlowLayout.CENTER, 0, 20));
         panelNorte.setPreferredSize(new Dimension(0, 60));
         JLabel lblTitulo = new JLabel("MENÚ PRINCIPAL");
@@ -26,7 +25,6 @@ public class MenuPrincipal extends JFrame {
         panelNorte.add(lblTitulo);
         panelPrincipal.add(panelNorte, BorderLayout.NORTH);
 
-        // Centro: Botones con null layout
         JPanel panelCentro = new JPanel(null);
         panelCentro.setBackground(new Color(240, 240, 240));
 
@@ -56,7 +54,6 @@ public class MenuPrincipal extends JFrame {
 
         panelPrincipal.add(panelCentro, BorderLayout.CENTER);
 
-        // Sur: Salir
         JPanel panelSur = new JPanel(null);
         panelSur.setPreferredSize(new Dimension(0, 60));
 
@@ -68,8 +65,6 @@ public class MenuPrincipal extends JFrame {
         panelPrincipal.add(panelSur, BorderLayout.SOUTH);
 
         setContentPane(panelPrincipal);
-
-        
     }
 
     public static void main(String[] args) {
