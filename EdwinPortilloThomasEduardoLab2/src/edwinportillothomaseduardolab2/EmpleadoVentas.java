@@ -1,29 +1,14 @@
 package edwinportillothomaseduardolab2;
-import java.util.Calendar;
 
 public class EmpleadoVentas extends EmpleadoEstandar {
-    private Calendar fechaVencimiento;
+    private double ventasMensuales[];
+    private double tasaComision;
     
-    public EmpleadoVentas(int codigo, String nombre, double salarioBase) {
+     public EmpleadoVentas(int codigo, String nombre, double salarioBase, double tasaComision) {
         super(codigo, nombre, salarioBase);
+        this.ventasMensuales = new double[12];
+        this.tasaComision = tasaComision;
     }
-    
-    @Override
-    public double calcularPago() {
-        Calendar hoy = Calendar.getInstance();
-        
-        if(hoy.before(fechaVencimiento) || hoy.equals(fechaVencimiento)) {
-            super.calcularPago();
-        }
-        return 0.0;
-    }
-    
-    public void setFechaVencimiento(Calendar nuevaFecha) {
-        fechaVencimiento = nuevaFecha;
-    }
-    
-    @Override
-    public String mostrarInformacion() {
-        return super.mostrarInformacion() + "Fecha fin del contrato: " + fechaVencimiento.getTime();
-    }
+     
+     
 }
