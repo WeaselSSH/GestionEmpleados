@@ -11,7 +11,7 @@ public class FrmVerReportes extends JFrame {
         this.empresa = empresa;
 
         setTitle("Reporte de Empleados");
-        setSize(400, 280);
+        setSize(500, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -23,20 +23,20 @@ public class FrmVerReportes extends JFrame {
         JPanel panel = new JPanel(null);
 
         JLabel lblTitulo = new JLabel("REPORTE DE EMPLEADOS");
-        lblTitulo.setFont(new Font("Arial", Font.BOLD, 18));
-        lblTitulo.setBounds(85, 10, 250, 25);
+        lblTitulo.setFont(new Font("Arial", Font.BOLD, 20));
+        lblTitulo.setBounds(120, 10, 300, 30);
         panel.add(lblTitulo);
 
         JTextArea txtReporte = new JTextArea();
         txtReporte.setEditable(false);
-        txtReporte.setFont(new Font("Monospaced", Font.PLAIN, 12));
+        txtReporte.setFont(new Font("ARIAL", Font.PLAIN, 13));
 
         JScrollPane scroll = new JScrollPane(txtReporte);
-        scroll.setBounds(75, 50, 250, 100);
+        scroll.setBounds(30, 50, 420, 250);
         panel.add(scroll);
 
         JButton btnCerrar = new JButton("Cerrar");
-        btnCerrar.setBounds(140, 170, 120, 30);
+        btnCerrar.setBounds(180, 320, 120, 30);
         btnCerrar.addActionListener(e -> dispose());
         panel.add(btnCerrar);
 

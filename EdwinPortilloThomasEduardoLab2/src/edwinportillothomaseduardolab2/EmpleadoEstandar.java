@@ -10,12 +10,12 @@ public class EmpleadoEstandar {
     protected double salarioBase;
     protected double horasTrabajadas;
 
-    public EmpleadoEstandar(int codigo, String nombre, double salarioBase) {
+    public EmpleadoEstandar(int codigo, String nombre, double salarioBase, Calendar fechaContratacion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.salarioBase = salarioBase;
         this.horasTrabajadas = 0;
-        fechaContratacion = Calendar.getInstance();
+        this.fechaContratacion = fechaContratacion;
     }
 
     public void setHorasTrabajadas(double horasTrabajadas) {

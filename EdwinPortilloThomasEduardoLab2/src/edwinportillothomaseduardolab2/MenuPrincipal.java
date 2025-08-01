@@ -74,7 +74,8 @@ public class MenuPrincipal extends JFrame {
         });
 
         btnRegistrarEmpleado.addActionListener(e -> {
-            JOptionPane.showMessageDialog(this, "Registrar Empleado aún no implementado.");
+            FrmRegistrarEmpleado frm = new FrmRegistrarEmpleado(empresa);
+            frm.setVisible(true);
         });
 
         btnRegistrarVentas.addActionListener(e -> {
