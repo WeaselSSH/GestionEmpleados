@@ -1,8 +1,10 @@
 package edwinportillothomaseduardolab2;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Empresa {
-    private List<EmpleadoEstandar> empleados;
+    private ArrayList<EmpleadoEstandar> empleados;
 
     public Empresa() {
         empleados = new ArrayList<>();
@@ -10,7 +12,7 @@ public class Empresa {
 
     public boolean registrarEmpleado(EmpleadoEstandar empleado) {
         if (buscarEmpleado(empleado.codigo) != null) {
-            return false; // Ya existe
+            return false;
         }
         empleados.add(empleado);
         return true;
@@ -43,12 +45,12 @@ public class Empresa {
         return false;
     }
 
-    public Double calcularPago(int codigo) {
+    public double calcularPago(int codigo) {
         EmpleadoEstandar emp = buscarEmpleado(codigo);
         if (emp != null) {
             return emp.calcularPago();
         }
-        return null;
+        return -1;
     }
 
     public EmpleadoEstandar buscarEmpleado(int codigo) {
@@ -61,30 +63,26 @@ public class Empresa {
     }
 
     public String generarReporte() {
-        StringBuilder reporte = new StringBuilder();
+        String reporte = "";
         int estandar = 0, temporal = 0, ventas = 0;
 
         for (EmpleadoEstandar emp : empleados) {
             if (emp instanceof EmpleadoTemporal) {
-                reporte.append("TEMPORAL: ").append(emp.mostrarInformacion()).append("\n");
+                reporte += "TEMPORAL: " + emp.mostrarInformacion() + "\n";
                 temporal++;
             } else if (emp instanceof EmpleadoVentas) {
-                reporte.append("VENTAS: ").append(emp.mostrarInformacion()).append("\n");
+                reporte += "VENTAS: " + emp.mostrarInformacion() + "\n";
                 ventas++;
             } else {
-                reporte.append("ESTANDAR: ").append(emp.mostrarInformacion()).append("\n");
+                reporte += "ESTANDAR: " + emp.mostrarInformacion() + "\n";
                 estandar++;
             }
         }
 
-        reporte.append("\nTotal empleados estándar: ").append(estandar)
-               .append("\nTotal empleados temporales: ").append(temporal)
-               .append("\nTotal empleados de ventas: ").append(ventas);
+        reporte += "\nTotal empleados estándar: " + estandar;
+        reporte += "\nTotal empleados temporales: " + temporal;
+        reporte += "\nTotal empleados de ventas: " + ventas;
 
-        return reporte.toString();
-    }
-
-    public List<EmpleadoEstandar> getEmpleados() {
-        return empleados;
+        return reporte;
     }
 }
