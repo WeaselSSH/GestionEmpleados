@@ -13,7 +13,6 @@ public class FrmCalcularPago extends JFrame {
         setTitle("Calcular Pago");
         setSize(400, 230);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
 
         initComponents();

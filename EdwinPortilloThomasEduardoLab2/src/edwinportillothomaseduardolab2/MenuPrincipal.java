@@ -5,11 +5,11 @@ import java.awt.*;
 
 public class MenuPrincipal extends JFrame {
 
-    private Empresa empresa = new Empresa(); // Instancia compartida
+    private Empresa empresa = new Empresa();
 
     public MenuPrincipal() {
         setTitle("Menú Principal");
-        setSize(500, 400);
+        setSize(500, 450);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -85,15 +85,17 @@ public class MenuPrincipal extends JFrame {
         btnActualizarContrato.addActionListener(e -> {
             JOptionPane.showMessageDialog(this, "Actualizar Contrato aún no implementado.");
         });
-        
+
         btnCalcularPago.addActionListener(e -> {
             FrmCalcularPago frm = new FrmCalcularPago(empresa);
             frm.setVisible(true);
         });
 
         btnVerReportes.addActionListener(e -> {
-            JOptionPane.showMessageDialog(this, "Ver Reportes aún no implementado.");
+            FrmVerReportes frm = new FrmVerReportes(empresa);
+            frm.setVisible(true);
         });
+
     }
 
     public static void main(String[] args) {

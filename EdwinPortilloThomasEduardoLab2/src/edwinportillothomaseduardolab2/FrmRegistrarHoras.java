@@ -9,10 +9,10 @@ public class FrmRegistrarHoras extends JFrame {
 
     public FrmRegistrarHoras(Empresa empresa) {
         this.empresa = empresa;
-
+        
+        setTitle("Registrar Horas");
         setSize(400, 250);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
 
         initComponents();
