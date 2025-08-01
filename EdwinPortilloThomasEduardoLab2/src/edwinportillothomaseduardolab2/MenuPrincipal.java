@@ -5,6 +5,8 @@ import java.awt.*;
 
 public class MenuPrincipal extends JFrame {
 
+    private Empresa empresa = new Empresa(); // Instancia compartida
+
     public MenuPrincipal() {
         setTitle("Menú Principal");
         setSize(500, 400);
@@ -65,6 +67,33 @@ public class MenuPrincipal extends JFrame {
         panelPrincipal.add(panelSur, BorderLayout.SOUTH);
 
         setContentPane(panelPrincipal);
+
+        btnRegistrarHoras.addActionListener(e -> {
+            FrmRegistrarHoras frm = new FrmRegistrarHoras(empresa);
+            frm.setVisible(true);
+        });
+
+        btnRegistrarEmpleado.addActionListener(e -> {
+            JOptionPane.showMessageDialog(this, "Registrar Empleado aún no implementado.");
+        });
+
+        btnRegistrarVentas.addActionListener(e -> {
+            FrmRegistrarVentas frm = new FrmRegistrarVentas(empresa);
+            frm.setVisible(true);
+        });
+
+        btnActualizarContrato.addActionListener(e -> {
+            JOptionPane.showMessageDialog(this, "Actualizar Contrato aún no implementado.");
+        });
+        
+        btnCalcularPago.addActionListener(e -> {
+            FrmCalcularPago frm = new FrmCalcularPago(empresa);
+            frm.setVisible(true);
+        });
+
+        btnVerReportes.addActionListener(e -> {
+            JOptionPane.showMessageDialog(this, "Ver Reportes aún no implementado.");
+        });
     }
 
     public static void main(String[] args) {
