@@ -10,7 +10,7 @@ public class Empresa {
 
     public boolean registrarEmpleado(EmpleadoEstandar empleado) {
         if (buscarEmpleado(empleado.codigo) != null) {
-            return false; // Ya existe
+            return false; 
         }
         empleados.add(empleado);
         return true;
