@@ -28,7 +28,7 @@ public class EmpleadoEstandar {
     }
 
     public String mostrarInformacion() {
-        return "Código: " + codigo + "Nombre: " + nombre + "Fecha contratación: " + fechaContratacion.getTime();
+        return " Código: " + codigo + " Nombre: " + nombre + " Fecha contratación: " + fechaContratacion.getTime();
     }
 
 }

@@ -24,6 +24,6 @@ public class EmpleadoTemporal extends EmpleadoEstandar {
     
     @Override
     public String mostrarInformacion() {
-        return super.mostrarInformacion() + "Fecha fin del contrato: " + fechaVencimiento.getTime();
+        return super.mostrarInformacion() + " Fecha fin del contrato: " + fechaVencimiento.getTime();
     }
 }
