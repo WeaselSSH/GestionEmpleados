@@ -2,7 +2,7 @@ package edwinportillothomaseduardolab2;
 
 import java.util.Calendar;
 
-public class BaseEmpleado {
+public class EmpleadoEstandar {
 
     protected int codigo;
     protected String nombre;
@@ -10,7 +10,7 @@ public class BaseEmpleado {
     protected double salarioBase;
     protected double horasTrabajadas;
 
-    public BaseEmpleado(int codigo, String nombre, double salarioBase) {
+    public EmpleadoEstandar(int codigo, String nombre, double salarioBase) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.salarioBase = salarioBase;
